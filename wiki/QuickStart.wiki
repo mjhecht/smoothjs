@@ -2,7 +2,13 @@
 
 = SmoothJS Quick-Start =
 
-Most functionality you'll ever want is provided by the globally accessible {{{animateProperty(...)}}}. Here's an explanation of the function's arguments.
+First, the basics, of course. Download the file "smooth.js" and reference it anywhere in your HTML file:
+
+{{{
+  <script src="smooth.js"></script>
+}}}
+
+Most functionality you'll ever want is provided by the globally accessible {{{animateProperty(...)}}}, which you can call from any script block. Here's an explanation of the function's arguments.
 
 == Global function: animateProperty(...) ==
 
@@ -33,8 +39,10 @@ function animateProperty(element, object, property, startValue, targetValue,
 === Example ===
 
 {{{
-var el = document.getElementById('some-element-id');
-animateProperty(el, el.style, 'backgroundColor', '#fff', '#000', 0.0, 0.5, 'rgb3', 'linear', true, 0.5);
+<script>
+  var el = document.getElementById('some-element-id');
+  animateProperty(el, el.style, 'backgroundColor', '#fff', '#000', 0.0, 0.5, 'rgb3', 'linear', true, 0.5);
+</scrit>
 }}}
 
-Linearly animates the CSS background-color property of an element from white to black, starting immediately, over a duration of 0.5 seconds. The element stays black for an extra 0.5 seconds, then the original color (not necessarily white; whatever it was before the animation began) is restored.
+Linearly animates the CSS 'background-color' property of an element from white to black, starting immediately, over a duration of 0.5 seconds. The element stays black for an extra 0.5 seconds, then the original color (not necessarily white; whatever it was before the animation began) is restored.
