@@ -27,8 +27,8 @@ function animateProperty(element, object, property, startValue, targetValue,
     * 'linear': The standard. Does what you'd expect.
     * 'decelerate': Starts out fast, then slows down towards the animation's completion. The timeline looks like an upside-down parabola, with its peak at the animation's end.
     * 'sine': Slow-in, slow-out. The timeline looks like a sine wave.
-  * opt_restore: (boolean) When the animation is done, should the original property value be restored?
-  * opt_hold: (number) A number of seconds to retain the achieved target value before the original value is restored.
+  * opt_restore: (boolean, optional) Additionally, when the animation is done, should the original property value be restored?
+  * opt_hold: (number, optional) A number of seconds to retain the achieved target value before the original value is restored (above).
 
 === Example ===
 
