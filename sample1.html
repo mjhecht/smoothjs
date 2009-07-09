@@ -1,0 +1,54 @@
+<html>
+	<head>
+		<title>SmoothJS Animation Sample 1</title>
+		
+		<style>
+			table {
+				width: 100%;
+				height: 100%;
+			}
+			
+			td {
+				border-radius: 10px; -webkit-border-radius: 10px; -moz-border-radius: 10px;
+			}
+		</style>
+		
+		<script src="smooth.js"></script>
+		<script>
+			function main() {
+				var TABLE_WIDTH = 10;
+				var TABLE_HEIGHT = 10;
+				var s = [];
+				
+				s.push('<table>');
+				
+				for (var i = 0; i < TABLE_HEIGHT; i++) {
+					s.push('<tr>');
+					for (var j = 0; j < TABLE_WIDTH; j++) {
+						s.push('<td onmouseover="animateCell(this)"></td>');
+					}					
+					s.push('</tr>');
+				}
+				
+				s.push('</table>');
+				
+				document.getElementById('content').innerHTML = s.join('');
+			}
+			
+			function animateCell(td) {
+				if (!td._animating) {
+					td._animating = true;
+					animateProperty(td, td.style, 'backgroundColor', '#fff', '#f00', 0.0, 0.5, 'rgb3', 'linear');
+					animateProperty(td, td.style, 'backgroundColor', '#f00', '#0f0', 0.5, 0.5, 'rgb3', 'linear');
+					animateProperty(td, td.style, 'backgroundColor', '#0f0', '#00f', 1.0, 0.5, 'rgb3', 'linear');
+					animateProperty(td, td.style, 'backgroundColor', '#00f', '#fff', 1.5, 0.5, 'rgb3', 'linear', true);
+					delaySetProperty(td, td, '_animating', false, 2.01);
+				}
+			}
+		</script>
+	</head>
+	<body onload="main()">
+		<div id="content"></div>
+	
+	</body>	
+</html>
